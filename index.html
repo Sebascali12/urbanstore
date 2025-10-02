@@ -1,306 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Urban Brothers</title>
   <style>
-    /* --------- ESTILOS GENERALES --------- */
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
       background-color: #111;
       color: #fff;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3 {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
     }
 
-    /* --------- ENTRADA --------- */
-    .entrada {
-      height: 100vh;
-      background: url('A_graffiti-style_digital_illustration_logo_for_"Ur.png') no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .entrada h1 {
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 5px #000;
-      margin-bottom: 30px;
-    }
-
-    .boton-entrada {
-      background-color: #ff3333;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    .boton-entrada:hover {
-      background-color: #ff5555;
-      transform: scale(1.1);
-    }
-
-    /* --------- CONTENIDO PRINCIPAL --------- */
-    .contenido {
-      display: none;
-      padding: 40px 20px;
-    }
-
-    header {
-      background: #222;
-      padding: 20px;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border-bottom: 2px solid #ff3333;
-    }
-
-    section {
-      margin: 40px auto;
-      max-width: 1000px;
-      background: #1b1b1b;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #ff3333;
-    }
-
-    h2 {
-      color: #ff3333;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      text-align: center;
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      text-align: center;
-    }
-
-    /* --------- PRODUCTOS --------- */
-    .productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .producto {
-      background: #222;
-      border-radius: 15px;
-      padding: 20px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0 0 8px #ff3333;
-      transition: transform 0.3s;
-    }
-
-    .producto:hover {
-      transform: scale(1.05);
-    }
-
-    .producto img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .producto h3 {
+    h1 {
+      font-size: 2em;
       color: #fff;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+      margin-top: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .producto p {
-      color: #ccc;
-      font-size: 1rem;
-      margin-bottom: 10px;
+    .logo-container {
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
-    .precio {
-      color: #ff3333;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* --------- BOTÓN WHATSAPP --------- */
-    .whatsapp {
-      display: inline-block;
-      background: #25d366;
-      color: white;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: 0.3s;
-      margin-top: 15px;
-    }
-
-    .whatsapp:hover {
-      background: #1ebe57;
+    .logo-container:hover {
       transform: scale(1.05);
     }
 
-    /* --------- FOOTER --------- */
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #111;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    /* --------- RESPONSIVE DESIGN --------- */
-    @media (max-width: 768px) {
-      .entrada h1 {
-        font-size: 2rem;
-      }
-
-      .boton-entrada {
-        font-size: 1rem;
-        padding: 12px 25px;
-      }
-
-      header {
-        font-size: 1.5rem;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .producto {
-        width: 90%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .entrada h1 {
-        font-size: 1.8rem;
-      }
-
-      .boton-entrada {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-      }
-
-      header {
-        font-size: 1.3rem;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
+    img {
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
 <body>
-
-  <!-- ENTRADA -->
-  <div class="entrada">
-    <h1>MODA URBANA INSPIRADA EN EL FLOW DE BARRIO</h1>
-    <button class="boton-entrada" onclick="mostrarPagina()">Entrar</button>
+  <!-- Logo como botón -->
+  <div class="logo-container" onclick="entrarPagina()">
+    <img src="logo.png" alt="Logo Urban Brothers">
   </div>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <div class="contenido" id="contenido">
-    <header>
-      URBAN BROTHERS
-    </header>
-
-    <section id="quienes-somos">
-      <h2>Quiénes Somos</h2>
-      <p>
-        Somos un equipo que nació en el corazón del barrio, inspirados en las experiencias, los sueños
-        y las ganas de salir adelante. Cada prenda refleja nuestra historia, nuestra lucha y nuestro estilo.
-        Creemos en la autenticidad, en la cultura del esfuerzo y en el poder de transformar el entorno con actitud y flow.
-        Desde el barrio para el mundo: <strong>URBANSTORE</strong>.
-      </p>
-    </section>
-
-    <section id="productos">
-      <h2>Nuestros Productos</h2>
-      <p>Descubre nuestras camisetas exclusivas inspiradas en tus personajes favoritos, con un toque urbano y único.</p>
-
-      <div class="productos">
-        <div class="producto">
-          <img src="https://via.placeholder.com/250x250?text=Camiseta+Goku+Urbana" alt="Camiseta Goku Urbana">
-          <h3>Camiseta Goku Urbana</h3>
-          <p>Estilo callejero inspirado en Dragon Ball Z.</p>
-          <p class="precio">$60.000</p>
-        </div>
-
-        <div class="producto">
-          <img src="https://via.placeholder.com/250x250?text=Camiseta+Bugs+Bunny+Street" alt="Camiseta Bugs Bunny Street">
-          <h3>Camiseta Bugs Bunny Street</h3>
-          <p>Looney Tunes con flow de barrio y actitud.</p>
-          <p class="precio">$60.000</p>
-        </div>
-
-        <div class="producto">
-          <img src="https://via.placeholder.com/250x250?text=Camiseta+DBZ+Graffiti" alt="Camiseta DBZ Graffiti">
-          <h3>Camiseta DBZ Graffiti</h3>
-          <p>Fusión entre anime y arte urbano.</p>
-          <p class="precio">$65.000</p>
-        </div>
-
-        <div class="producto">
-          <img src="https://via.placeholder.com/250x250?text=Camiseta+Toon+Squad" alt="Camiseta Toon Squad">
-          <h3>Camiseta Toon Squad</h3>
-          <p>Inspirada en Space Jam, con estilo streetwear.</p>
-          <p class="precio">$70.000</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2>Contáctanos</h2>
-      <p>¿Quieres conocer nuestras camisetas o hacer un pedido personalizado?</p>
-      <a class="whatsapp" href="https://wa.me/573028348380" target="_blank">Escríbenos por WhatsApp</a>
-    </section>
-
-    <footer>
-      © 2025 Urban Brothers - Moda urbana inspirada en el flow de barrio
-    </footer>
-  </div>
+  <!-- Texto debajo -->
+  <h1>Moda urbana inspirada en el flow de barrio</h1>
 
   <script>
-    function mostrarPagina() {
-      document.querySelector('.entrada').style.display = 'none';
-      document.querySelector('.contenido').style.display = 'block';
-      window.scrollTo(0, 0);
+    // Cuando el usuario hace clic en el logo, entra a la página oficial
+    function entrarPagina() {
+      window.location.href = "https://tu-tienda-oficial.com"; 
+      // Reemplaza este link por la URL real de tu tienda
     }
   </script>
-
 </body>
 </html>
